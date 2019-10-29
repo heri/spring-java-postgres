@@ -24,7 +24,7 @@ public final class HelloController {
 
   @RequestMapping("/webhook")
   @ResponseBody
-  USer webhook(@RequestParam String query) {
+  User webhook(@RequestParam String query) {
     var user = new User(query.get("id"), query.get("firstName"), query.get("lastName"));
     dbRepository.updateUser(user);
     return user;
